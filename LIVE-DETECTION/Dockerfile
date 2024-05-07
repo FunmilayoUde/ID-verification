@@ -11,7 +11,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/FunmilayoUde/ID-verification.git
 
-RUN pip3 install -r requirements.txt
+RUN cd
+
+RUN pip install -r requirements.txt
 
 EXPOSE 8501
 
