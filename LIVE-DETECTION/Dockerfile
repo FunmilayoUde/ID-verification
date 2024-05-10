@@ -2,15 +2,20 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    software-properties-common \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+COPY . /app
 
-RUN git clone https://github.com/FunmilayoUde/ID-verification.git
+RUN apt-get update && apt-get install -y cmake
 
+RUN apt-get update && apt-get install -y g++
+
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+
+RUN apt-get update && \
+    apt-get install -y cmake g++ libglib2.0-0
+
+RUN apt-get update && apt-get install -y tesseract-ocr
+
+ENV CXX=g++
 
 RUN pip install -r requirements.txt
 

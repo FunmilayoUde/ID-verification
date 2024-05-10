@@ -4,4 +4,6 @@ pytesseract
 Pillow
 numpy
 face-recognition
-sqlite3
+
+
+
