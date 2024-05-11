@@ -4,6 +4,33 @@ WORKDIR /app
 
 COPY . /app
 
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libavcodec-dev \
+    libswscale-dev \
+    libavformat-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer1.0-dev \
+    libpng-dev \
+    libopencv-dev \
+    libjpeg-dev \
+    libopenexr-dev \
+    libtiff-dev \
+    libwebp-dev \
+    wget \
+    qtbase5-dev \
+    qtchooser \
+    qt5-qmake \
+    qtbase5-dev-tools \
+    libtbb-dev \
+    libgphoto2-dev \
+    ffmpeg \
+    usbutils \
+    v4l-utils
+
+
+RUN apt-get update && apt-get install -y v4l-utils
+
 RUN apt-get update && apt-get install -y cmake
 
 RUN apt-get update && apt-get install -y g++
